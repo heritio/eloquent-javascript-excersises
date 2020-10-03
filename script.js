@@ -2160,3 +2160,17 @@ function reduce(secondArr, combine, start) {
 }
 
 console.log(reduce(SCRIPTS, (a, b) => a + b, 0));
+
+
+//Function to find odd or even with recursion
+function isEven(target){
+ if(target == 0){
+  return "is Even"; 
+ }else if(target == 1){
+  return "is Odd"; 
+ }else if(target < 0){
+  return isEven(-target); 
+ }else{
+  return isEven(target - 2); 
+ }
+}
