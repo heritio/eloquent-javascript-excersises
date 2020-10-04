@@ -2175,6 +2175,26 @@ function isEven(target){
  }
 }
 
+//Function to reverse array
+function reverseArray(arr){
+ let newArr = [];
+  for(let i = arr.length - 1; i >= 0; i--){
+   newArr.push(arr[i]); 
+  }
+  return newArr;
+}
+
+function reverseArrayInPlace(arr){
+ for(let i = 0; i < arr.length / 2; i++){
+  let old = arr[i];
+   arr[i] = arr[arr.length - 1 - i];
+   arr[arr.length - 1 - i] = old;
+ }
+  return arr;
+}
+
+
+//functions to convert array to linked list;
 
 function arrToList(arr){
  let list = null;
