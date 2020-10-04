@@ -2174,3 +2174,20 @@ function isEven(target){
   return isEven(target - 2); 
  }
 }
+
+
+function arrToList(arr){
+ let list = null;
+  for(let i = arr.length - 1; i >= 0; i--){
+   let list = {value:arr[i], next: list}; 
+  }
+  return list;
+}
+
+function listToArr(list){
+ let arr = [];
+  for(let node = list; node; node = node.rest){
+   arr.push(node.value); 
+  }
+  return arr;
+}
