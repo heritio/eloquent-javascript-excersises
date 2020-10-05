@@ -2211,3 +2211,26 @@ function listToArr(list){
   }
   return arr;
 }
+
+
+//How to find script with most characters without higher order functions
+
+//first we need a function that counts the characters in ranges array for each script object
+function characterCount(script){
+ return script.ranges.reduce((count, [from,to])=>{
+   return count + (to - from);
+ },0); 
+}
+
+//Then we need a loopn that goes through each script and compares the script by the larges size by implementing characterCount function into the new function
+
+ let biggest = null;
+  for(let script of SCRIPTS){
+    if(biggest == null || characterCount(biggest) < characterCount(script)){
+     biggest = script; 
+   }
+  }
+console.log(biggest);
+
+
+
