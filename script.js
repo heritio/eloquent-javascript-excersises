@@ -2233,4 +2233,19 @@ function characterCount(script){
 console.log(biggest);
 
 
+//RECOGNIZING TEXT 
+
+//This is a way to find if a character code is in a script with the code.
+
+function characterScript(code){
+ for(let script of SCRIPTS){
+  if(script.ranges.some(([from, to]) => {
+    return code >= from && code < to;
+  }))return script;
+  
+ }
+  return null;
+}
+
+//Calling characterScript like this characterScript(120) -> would return a script with that code in a range.
 
